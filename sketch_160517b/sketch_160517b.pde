@@ -20,11 +20,18 @@ if (startScreen)
     text(" Ma Quiz ", 400, 250);
     text(" Press 1 to start ", 400, 350);
   } else {
-fill(255);
-     rect(width/2, 0, 400, 400);
-    rect(width/2, height/2, 400, 400);
-     rect(0, 0, 400, 400);
-      rect(0, height/2, 400, 400);
+fill(10, 150, 10);
+stroke(0);
+     rect(width/2, 200, 200, 200);
+    rect(width/2, 400, 200, 200);
+     rect(200, 200, 200, 200);
+      rect(200, 400, 200, 200);
+      rect(100, 40, 600, 150);
 
+  }
+}
+void keyPressed() {
+   if (key == '1') {
+    startScreen = false;
   }
 }
