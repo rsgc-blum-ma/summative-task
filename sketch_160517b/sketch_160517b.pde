@@ -1,7 +1,8 @@
-int counter;
-int correct;
-int incorrect;
-boolean enable;
+int counter; // Level Counter
+int correct; // Number of correct questions answered
+int incorrect; // Number of incorrect questions answered
+boolean enable; // Allow correct value to be disabled when enable=false
+
 void setup() {
   size(800, 800);
   background(255);
@@ -16,7 +17,7 @@ void setup() {
 
 void draw() {
 
-  
+  // Startscreen
   if (counter==0)
   {
     fill(0, 150, 150);
@@ -49,35 +50,27 @@ void draw() {
 
     if (key == 'a') {
       clear();
-      incorrect= +1;
+
       enable=true;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
     }
     if (key == 's') {
       clear();
-      incorrect= +1;
+
       enable=true;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
     }
     if (key == 'f') {
       clear();
-      incorrect= +1;
+
       enable=true;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
     }
     if (key == 'd') {
       clear();
-      correct=1;
       enable=true;
       text("Correct. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+      correct=correct+1 ;
     }
   }
 
@@ -88,7 +81,7 @@ void draw() {
 
 
 
-  if (counter==2)  {
+  if (counter==2) {
     clear();
     text("What is 8x2?", 50, 50, 600, 150);
     text("A) 8", 150, 200);
@@ -97,36 +90,31 @@ void draw() {
     text("F) 1862", 150, 350);
     enable=false;
 
-    if (key == 'd') { //answer
+    if (key == 'd') {
       clear();
-      correct=2;
       text("Correct. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+      correct=correct+1; 
       enable=true;
     }
-    if (key == 's') { //answer
+    if (key == 's') { 
+      clear();
+      incorrect+=1;
+      text("Wrong. Press 1 to continue", 50, 50, 200, 400);
+
+      enable=true;
+    }
+    if (key == 'a') { 
       clear();
       incorrect=+1;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 'a') { //answer
+    if (key == 'f') { 
       clear();
       incorrect=+1;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
-      enable=true;
-    }
-    if (key == 'f') { //answer
-      clear();
-      incorrect=+1;
-      text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
   }
@@ -135,7 +123,7 @@ void draw() {
 
 
 
-  if (counter==3)  {
+  if (counter==3) {
     clear();
     text("What is Love", 50, 50, 600, 150);
     text("A) baby dont hurt me", 150, 200);
@@ -144,36 +132,31 @@ void draw() {
     text("F) 1984", 150, 350);
     enable=false;
 
-    if (key == 'a') { //answer
+    if (key == 'a') { 
       clear();
-      correct=3;
       text("Correct. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+      correct=correct+1 ;
       enable=true;
     }
-    if (key == 's') { //answer
+    if (key == 's') { 
       clear();
       incorrect=+1;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 'd') { //answer
+    if (key == 'd') { 
       clear();
       incorrect=+1;
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 'f') { //answer
+    if (key == 'f') { 
       clear();
-      incorrect=+1;
+
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
   }
@@ -186,7 +169,7 @@ void draw() {
 
   // Level 4
 
-  if (counter==4)  {
+  if (counter==4) {
     clear();
     text("What is 4 + 4", 50, 50, 600, 150);
     text("A) Eight", 150, 200);
@@ -195,48 +178,85 @@ void draw() {
     text("F) ( cuberoot(x+1)/sqrt(x-6))+((x+5)/2))", 150, 350);
     enable=false;
 
-    if (key == 'a') { //answer
+    if (key == 'a') {
       clear();
-      incorrect=+1;
+
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 's') { //answer
+    if (key == 's') { 
       clear();
-      incorrect=+1;
+
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 'd') { //answer
+    if (key == 'd') { 
       clear();
-      incorrect=+1;
+
       text("Wrong. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+
       enable=true;
     }
-    if (key == 'f') { //answer
+    if (key == 'f') { 
       clear();
-      correct=4;
       text("Correct. Press 1 to continue", 50, 50, 200, 400);
-      text(correct, 500, 100);
-      text(incorrect, 500, 200);
+      correct=correct+1 ;
+      enable=true;
+    }
+  }
+  if (counter==5) {
+    clear();
+    text("Last Question: What did Max Get on his software exam", 50, 50, 600, 150);
+    text("A) 100, Of course", 150, 200);
+    text("S) We will see", 150, 250);
+    text("D) Nothing special", 150, 300);
+    text("F) An average Max Blum mark", 150, 350);
+    enable=false;
+
+    if (key == 'a') { 
+      clear();
+
+      text("Wrong. Press 1 to continue", 50, 50, 200, 400);
+
+      enable=true;
+    }
+    if (key == 's') { 
+      clear();
+
+      text("Wrong. Press 1 to continue", 50, 50, 200, 400);
+
+      enable=true;
+    }
+    if (key == 'd') { 
+      clear();
+
+      text("Wrong. Press 1 to continue", 50, 50, 200, 400);
+
+      enable=true;
+    }
+    if (key == 'f') { 
+      clear();
+      textSize(50);
+      text("What else is new, Thanks for playing", 180, 100, 400, 400);
+
+
       enable=true;
     }
   }
 }
 
-
 void keyPressed() {
-  if (key == '1' ) if(enable == true) {
+  if (key == '1' ) if (enable == true) {
     counter+= 1;
   }
+  // Disable the ability to spam the counter key before answering the question
+
   if (key == 't' )
   {
-  counter = 1;
+    counter = 1;
   }
+
+  // For startscreen
 }
